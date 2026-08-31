@@ -1,22 +1,12 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
-
 export const metadata: Metadata = {
-  title:'FlowStock｜多品牌庫存管理中心',
-  description:'多品牌、多平台、多倉庫的訂單與庫存整合管理系統',
-  openGraph:{title:'FlowStock｜多品牌庫存管理中心',description:'多品牌・多平台・多倉庫，一站整合營運資訊',images:['https://flowstock-demo.vercel.app/og.png']},
-  twitter:{card:'summary_large_image',title:'FlowStock｜多品牌庫存管理中心',description:'多品牌・多平台・多倉庫，一站整合營運資訊',images:['https://flowstock-demo.vercel.app/og.png']}
+  metadataBase: new URL('https://flowstock-demo.vercel.app'),
+  title:'浚榮庫存系統｜材料進出與師傅領料管理',
+  description:'浚榮材料進貨、總倉庫存、師傅領料與成本統計系統',
+  openGraph:{title:'浚榮庫存系統',description:'材料進出、師傅領料與成本統計，一套系統自動完成',images:['/og.png']},
+  twitter:{card:'summary_large_image',title:'浚榮庫存系統',description:'材料進出、師傅領料與成本統計，一套系統自動完成',images:['/og.png']}
 };
 
 export default function RootLayout({
@@ -26,11 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-Hant">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
